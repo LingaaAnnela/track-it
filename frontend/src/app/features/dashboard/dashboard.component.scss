@@ -1,0 +1,10 @@
+.example-container {
+  width: 100%;
+  height: calc(100% - 4rem);
+  // margin: 12px;
+  border: 1px solid #555;
+}
+
+mat-drawer {
+  min-width: 18rem;
+}
