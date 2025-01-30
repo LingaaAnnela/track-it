@@ -1,10 +1,49 @@
 .example-container {
   width: 100%;
   height: calc(100% - 4rem);
-  // margin: 12px;
   border: 1px solid #555;
 }
 
-mat-drawer {
+mat-drawer-content {
+  max-width: calc(100% - 18rem);
+  margin-left: 17rem;
+}
+
+mat-grid-list {
+  margin: 2rem;
+}
+mat-grid-tile {
+  margin: 2rem;
+}
+
+mat-card {
+  height: 100%;
+  width: 100%;
+}
+
+.sidenav-container {
+  height: 100vh;
+}
+
+.collapsed {
+  // width: 60px !important;
+  min-width: 6rem;
+}
+
+.expanded {
+  // width: 250px !important;
   min-width: 18rem;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  a {
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+    display: block;
+  }
 }

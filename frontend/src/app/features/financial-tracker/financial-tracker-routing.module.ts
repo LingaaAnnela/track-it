@@ -3,20 +3,23 @@ import { RouterModule, Routes } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideState } from '@ngrx/store';
 
-import { DashboardComponent } from './dashboard.component';
-import { dashboardReducer } from './store/reducers';
+import { FinancialTrackerComponent } from './financial-tracker.component';
+import { financialTrackingReducer } from './store/reducers';
 
 export const StoreProviders = [
-  provideState({ name: 'dashboard', reducer: dashboardReducer }),
+  provideState({
+    name: 'financial',
+    reducer: financialTrackingReducer,
+  }),
   provideEffects([]),
 ];
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, providers: StoreProviders },
+  { path: '', component: FinancialTrackerComponent, providers: StoreProviders },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class FinancialTrackingRoutingModule {}

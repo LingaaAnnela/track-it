@@ -16,3 +16,11 @@ body {
   border: 1px solid var(--mat-sys-outline-variant);
   font: var(--mat-sys-body-large);
 }
+
+.trackit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}

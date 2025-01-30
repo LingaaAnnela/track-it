@@ -5,6 +5,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -14,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatButtonModule,
     MatIconModule,
+    MatGridListModule,
+    MatCardModule,
   ],
   exports: [
     MatSlideToggleModule,
@@ -22,6 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatButtonModule,
     MatIconModule,
+    MatGridListModule,
+    MatCardModule,
   ],
 })
 export class MaterialModule {}
