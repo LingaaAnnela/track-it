@@ -7,6 +7,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -18,6 +20,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatGridListModule,
     MatCardModule,
+    MatTabsModule,
+    MatListModule,
   ],
   exports: [
     MatSlideToggleModule,
@@ -28,6 +32,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatGridListModule,
     MatCardModule,
+    MatTabsModule,
+    MatListModule,
   ],
 })
 export class MaterialModule {}

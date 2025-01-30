@@ -5,60 +5,23 @@
       <!-- [style.background]="tile.color" -->
 
       @if( tile.text === '💰 Financial Tracking') {
-      <p-card class="w-96 shadow-4">
-        <ng-template pTemplate="header">
-          <div
-            class="flex items-center gap-2"
-            style="display: flex; align-items: center; margin-left: 1rem"
-          >
-            <i
-              class="pi pi-chart-line"
-              style="font-size: 1.5rem; color: #2196f3"
-            ></i>
-            <span style="font-size: 1.25rem; font-weight: bold; color: #333"
-              >Financial Tracking</span
-            >
-          </div>
-        </ng-template>
-
-        <ng-template pTemplate="content">
-          <div class="text-gray-700 space-y-2">
-            <p>
-              💰 Available Balance:
-              <strong style="color: green">$5,420.50</strong>
-            </p>
-            <p>
-              💸 Spent This Month: <strong style="color: red">$1,250.00</strong>
-            </p>
-            <p>🏦 Savings: <strong>$8,000 / $10,000 (80%)</strong></p>
-
-            <!-- PrimeNG Progress Bar -->
-            <!-- <p-progressBar [value]="80"></p-progressBar> -->
-
-            <p>📅 Upcoming: <strong>Netflix - $15.99 (Feb 5)</strong></p>
-            <p>
-              📈 Investments:
-              <strong style="color: green">+4.2% This Month</strong>
-            </p>
-          </div>
-        </ng-template>
-
-        <ng-template pTemplate="footer">
-          <div style="display: flex; justify-content: space-between">
-            <p-button
-              label="View Detailed Report"
-              icon="pi pi-chart-bar"
-              class="p-button-sm p-button-primary"
-              routerLink="/financial-tracking"
-            ></p-button>
-            <!-- <p-button
-              label="Add Transaction"
-              icon="pi pi-plus"
-              class="p-button-sm p-button-secondary"
-            ></p-button> -->
-          </div>
-        </ng-template>
-      </p-card>
+      <trackit-financial-tracking-tile></trackit-financial-tracking-tile>
+      } @else if(tile.text === '📚 Learning & Skill Progress') {
+      <trackit-learning-skill-progress-tile></trackit-learning-skill-progress-tile>
+      } @else if(tile.text === '📈 Investments & Portfolio') {
+      <trackit-investment-portfolio-tile></trackit-investment-portfolio-tile>
+      } @else if(tile.text === '💵 Payments & Due Dates') {
+      <trackit-payments-due-dates-tile></trackit-payments-due-dates-tile>
+      } @else if(tile.text === '🎯 Goal Tracking') {
+      <trackit-goal-tracking-tile></trackit-goal-tracking-tile>
+      } @else if(tile.text === '✅ To-Do Lists & Planning') {
+      <trackit-todo-list-tracking-tile></trackit-todo-list-tracking-tile>
+      } @else if(tile.text === '💳 Subscription Tracker') {
+      <trackit-subscription-tracker-tile></trackit-subscription-tracker-tile>
+      } @else if(tile.text === '📊 Daily Insights & Productivity') {
+      <trackit-daily-insights-productivity-tile></trackit-daily-insights-productivity-tile>
+      } @else if(tile.text === '🏋️‍♂️ Health & Fitness') {
+      <trackit-health-fitness-tile></trackit-health-fitness-tile>
       } @else {
       <mat-card appearance="outlined">
         <mat-card-header>

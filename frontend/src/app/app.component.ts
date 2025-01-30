@@ -97,7 +97,7 @@ export class AppComponent {
       {
         label: 'Learning & Skill Progress',
         icon: 'pi pi-chart-line',
-        routerLink: [''],
+        routerLink: ['learning-skill-progress'],
         items: [
           {
             label: 'Courses & Certifications',
