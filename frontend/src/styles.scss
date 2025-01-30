@@ -24,3 +24,15 @@ body {
   height: 100%;
   width: 100%;
 }
+
+.trackit-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.trackit-primary-btn {
+  background-color: #10b981;
+  color: #fff;
+}

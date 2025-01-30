@@ -21,6 +21,11 @@ mat-card {
   width: 100%;
 }
 
+.mat-grid-tile-content {
+  padding: 0px;
+  margin: 0px;
+}
+
 .sidenav-container {
   height: 100vh;
 }
@@ -46,4 +51,8 @@ mat-card {
     color: black;
     display: block;
   }
+}
+
+mat-grid-tile {
+  display: flex; /* Ensure it uses flexbox */
 }

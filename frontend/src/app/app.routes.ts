@@ -16,4 +16,11 @@ export const routes: Routes = [
         (m) => m.FinancialTrackerModule
       ),
   },
+  {
+    path: 'learning-skill-progress',
+    loadChildren: () =>
+      import(
+        './features/learning-skill-progress/learning-skill-progress.module'
+      ).then((m) => m.LearningSkillProgressModule),
+  },
 ];

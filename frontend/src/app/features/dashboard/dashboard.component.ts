@@ -23,27 +23,39 @@ export interface Tile {
 export class DashboardComponent {
   tiles: Tile[] = [
     { text: '💰 Financial Tracking', cols: 1, rows: 1, color: 'lightblue' },
-    { text: '🎯 Goal Tracking', cols: 1, rows: 1, color: 'lightyellow' },
     {
-      text: '📚 Learning & Skill Progress',
+      text: '💵 Payments & Due Dates',
+      cols: 1,
+      rows: 1,
+      color: 'lightyellow',
+    },
+    {
+      text: '📈 Investments & Portfolio',
       cols: 2,
       rows: 2,
       color: 'lightpink',
     },
     {
-      text: '✅ To-Do Lists & Planning',
+      text: '📚 Learning & Skill Progress',
       cols: 2,
       rows: 1,
       color: 'lightgreen',
     },
     {
-      text: '📅 Subscription & Payment Reminders',
+      text: '💳 Subscription Tracker',
       cols: 1,
       rows: 1,
       color: 'orange',
     },
-    { text: 'Family', cols: 2, rows: 1, color: '#DDBDF1' },
-    { text: 'Memories', cols: 1, rows: 1, color: 'red' },
+    { text: '✅ To-Do Lists & Planning', cols: 2, rows: 1, color: '#DDBDF1' },
+    { text: '🎯 Goal Tracking', cols: 1, rows: 1, color: 'red' },
+    {
+      text: '📊 Daily Insights & Productivity',
+      cols: 2,
+      rows: 1,
+      color: 'red',
+    },
+    { text: '🏋️‍♂️ Health & Fitness', cols: 1, rows: 1, color: 'red' },
   ];
 
   ngOnInit() {
