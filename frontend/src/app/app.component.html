@@ -8,5 +8,34 @@
   <div class="navbar-profile">
     <i class="pi pi-bars" style="color: #fafafa; font-size: 2rem"></i>
   </div> -->
+  <div>
+    <p-button>
+      <i class="pi pi-check-circle" style="font-size: 1.2rem"></i>
+      Track It!
+    </p-button>
+    <br />
+    <span class="sub-title"> Anything you'd like to!</span>
+  </div>
+  <!-- <p-button label="Track It!" /> -->
 </nav>
-<trackit-dashboard></trackit-dashboard> <router-outlet />
+<mat-drawer-container class="example-container" [hasBackdrop]="false">
+  <mat-drawer
+    #drawer
+    [mode]="'over'"
+    [opened]="true"
+    [ngClass]="{ expanded: isExpanded, collapsed: !isExpanded }"
+  >
+    <div class="card flex justify-center">
+      <p-panelmenu
+        [model]="items"
+        [style]="{ width: '300px' }"
+        [multiple]="true"
+      />
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet />
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<!-- <trackit-dashboard></trackit-dashboard>  -->
