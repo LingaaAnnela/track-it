@@ -1,1 +1,14 @@
-<div class="trackit-container">Learning Skill Progress Componenet!</div>
+<div class="dashboard-container">
+  <mat-grid-list cols="4" gutterSize="1.5rem">
+    @for (tile of tiles; track tile) {
+    <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows">
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title> {{ tile.text }} </mat-card-title>
+        </mat-card-header>
+        <mat-card-content> </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    }
+  </mat-grid-list>
+</div>

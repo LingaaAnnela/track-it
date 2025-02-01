@@ -1,23 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { MenuItem } from 'primeng/api';
+
+import { CoreModule } from './core/core.module';
+
 import { DashboardModule } from './features/dashboard/dashboard.module';
 import { PrimeNgModule } from './features/primeng.module';
-import { MenuItem } from 'primeng/api';
 import { MaterialModule } from './features/material.module';
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
 
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
     RouterOutlet,
+    CoreModule,
     MaterialModule,
     PrimeNgModule,
     DashboardModule,
@@ -26,31 +23,6 @@ export interface Tile {
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  tiles: Tile[] = [
-    { text: '💰 Financial Tracking', cols: 1, rows: 1, color: 'lightblue' },
-    { text: '🎯 Goal Tracking', cols: 1, rows: 1, color: 'lightyellow' },
-    {
-      text: '📚 Learning & Skill Progress',
-      cols: 2,
-      rows: 2,
-      color: 'lightpink',
-    },
-    {
-      text: '✅ To-Do Lists & Planning',
-      cols: 2,
-      rows: 1,
-      color: 'lightgreen',
-    },
-    {
-      text: '📅 Subscription & Payment Reminders',
-      cols: 1,
-      rows: 1,
-      color: 'orange',
-    },
-    { text: 'Family', cols: 2, rows: 1, color: '#DDBDF1' },
-    { text: 'Memories', cols: 1, rows: 1, color: 'red' },
-  ];
-
   isExpanded = true;
   items!: MenuItem[];
 
