@@ -3,27 +3,27 @@ import { catchError, exhaustMap, map, of, switchMap, tap } from 'rxjs';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 import { ApiService } from '../../services/api.service';
-import * as DashboardActions from '../actions';
+import * as LearningActions from '../actions';
 
 export const onInitialize$ = createEffect(
   () => {
     return inject(Actions).pipe(
-      ofType(DashboardActions.initialize),
-      map(() => DashboardActions.getTilesInfo())
+      ofType(LearningActions.initialize),
+      map(() => LearningActions.getCoursesInfo())
     );
   },
   { functional: true }
 );
 
-export const onGetTilesInfo = createEffect(
+export const onGetCoursesInfo = createEffect(
   (actions$ = inject(Actions), apiService = inject(ApiService)) => {
     return actions$.pipe(
-      ofType(DashboardActions.getTilesInfo),
+      ofType(LearningActions.getCoursesInfo),
       switchMap(() =>
-        apiService.getTiles().pipe(
-          map((tiles) => DashboardActions.tilesInfoSuccess({ tiles })),
+        apiService.getCourses().pipe(
+          map((courses) => LearningActions.CoursesInfoSuccess({ courses })),
           catchError((error: { message: string }) =>
-            of(DashboardActions.tilesInfoFailure())
+            of(LearningActions.CoursesInfoFailure())
           )
         )
       )

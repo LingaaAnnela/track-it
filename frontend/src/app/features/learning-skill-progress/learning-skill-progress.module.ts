@@ -4,6 +4,7 @@ import { MaterialModule } from '../material.module';
 import { LearningSkillProgressComponent } from './learning-skill-progress.component';
 import { PrimeNgModule } from '../primeng.module';
 import { FinancialTrackingRoutingModule } from './learning-skill-progress-routing.module';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [LearningSkillProgressComponent],
@@ -13,6 +14,7 @@ import { FinancialTrackingRoutingModule } from './learning-skill-progress-routin
     PrimeNgModule,
     FinancialTrackingRoutingModule,
   ],
+  providers: [ApiService],
   exports: [LearningSkillProgressComponent],
 })
 export class LearningSkillProgressModule {}

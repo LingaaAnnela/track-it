@@ -10,17 +10,6 @@
       <trackit-learning-skill-progress-tile></trackit-learning-skill-progress-tile>
       } @else if(tile.text === '📈 Investments & Portfolio') {
       <trackit-investment-portfolio-tile></trackit-investment-portfolio-tile>
-      <!-- <mat-card appearance="outlined">
-        <mat-card-header>
-          <mat-card-title> {{ tile.text }} </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <ng-container *ngIf="tiles$ | async as tiles">
-            <pre> tiles : {{ tiles | json }} </pre>
-          </ng-container>
-        </mat-card-content>
-      </mat-card> -->
-
       } @else if(tile.text === '💵 Payments & Due Dates') {
       <trackit-payments-due-dates-tile></trackit-payments-due-dates-tile>
       } @else if(tile.text === '🎯 Goal Tracking') {
