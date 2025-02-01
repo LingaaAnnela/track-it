@@ -5,10 +5,11 @@ import { provideState } from '@ngrx/store';
 
 import { DashboardComponent } from './dashboard.component';
 import { dashboardReducer } from './store/reducers';
+import * as tileEffects from './store/effects/tiles.effects';
 
 export const StoreProviders = [
   provideState({ name: 'dashboard', reducer: dashboardReducer }),
-  provideEffects([]),
+  provideEffects([tileEffects]),
 ];
 
 const routes: Routes = [
