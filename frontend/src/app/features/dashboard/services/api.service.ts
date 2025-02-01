@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { DashboardTile } from '../interfaces';
+import { TrackitTile } from '../../../core/interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
-export class DashboardApiService {
+export class ApiService {
   private BASE_URL = 'https://fake-json-api.mock.beeceptor.com';
 
   constructor(private _http: HttpClient) {}
@@ -15,7 +15,7 @@ export class DashboardApiService {
     return this._http.get(`${this.BASE_URL}/companies`);
   }
 
-  getTiles(): Observable<DashboardTile[]> {
+  getTiles(): Observable<TrackitTile[]> {
     return of([
       { text: '💰 Financial Tracking', cols: 1, rows: 1, color: 'lightblue' },
       {

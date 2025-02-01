@@ -1,6 +1,29 @@
-// .trackit-container {
-//   background-color: red($color: #cf4040);
-//   display: block;
-//   justify-content: center;
-//   align-items: center;
-// }
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.trackit-container {
+  background-color: red($color: #cf4040);
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.example-container {
+  width: 100%;
+  height: calc(100% - 4rem);
+  border: 1px solid #555;
+}
+
+mat-card {
+  height: 100%;
+  width: 100%;
+}
+
+mat-grid-list {
+  margin: 2rem;
+}
+mat-grid-tile {
+  margin: 2rem;
+}
