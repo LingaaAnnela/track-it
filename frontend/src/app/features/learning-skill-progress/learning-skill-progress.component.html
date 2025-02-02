@@ -1,13 +1,13 @@
 <div class="trackit-container">
   <mat-grid-list cols="4" gutterSize="1.5rem">
-    @for (course of (courses$ | async); track course) {
-    <mat-grid-tile [colspan]="course.cols" [rowspan]="course.rows">
-      <mat-card appearance="outlined" class="trackit-card">
-        <mat-card-header>
-          <mat-card-title> {{ course.text }} </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <!-- <div class="trackit-tile-container">
+    @for (course of courses$ | async; track course) {
+      <mat-grid-tile [colspan]="course.cols" [rowspan]="course.rows">
+        <mat-card appearance="outlined" class="trackit-card">
+          <mat-card-header>
+            <mat-card-title> {{ course.text }} </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <!-- <div class="trackit-tile-container">
             <mat-list role="list">
               <mat-list-item role="listitem">
                 ✅ Available Balance
@@ -16,10 +16,10 @@
               <mat-list-item role="listitem">🏦 Savings Progress</mat-list-item>
             </mat-list>
           </div> -->
-        </mat-card-content>
-        <mat-card-actions align="end"> </mat-card-actions>
-      </mat-card>
-    </mat-grid-tile>
+          </mat-card-content>
+          <mat-card-actions align="end"> </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
     }
   </mat-grid-list>
 </div>

@@ -9,10 +9,10 @@ export const onInitialize$ = createEffect(
   () => {
     return inject(Actions).pipe(
       ofType(LearningActions.initialize),
-      map(() => LearningActions.getCoursesInfo())
+      map(() => LearningActions.getCoursesInfo()),
     );
   },
-  { functional: true }
+  { functional: true },
 );
 
 export const onGetCoursesInfo = createEffect(
@@ -22,12 +22,10 @@ export const onGetCoursesInfo = createEffect(
       switchMap(() =>
         apiService.getCourses().pipe(
           map((courses) => LearningActions.CoursesInfoSuccess({ courses })),
-          catchError((error: { message: string }) =>
-            of(LearningActions.CoursesInfoFailure())
-          )
-        )
-      )
+          catchError((error: { message: string }) => of(LearningActions.CoursesInfoFailure())),
+        ),
+      ),
     );
   },
-  { functional: true }
+  { functional: true },
 );

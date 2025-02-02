@@ -12,9 +12,7 @@ export const StoreProviders = [
   provideEffects([tileEffects]),
 ];
 
-const routes: Routes = [
-  { path: '', component: DashboardComponent, providers: StoreProviders },
-];
+const routes: Routes = [{ path: '', component: DashboardComponent, providers: StoreProviders }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

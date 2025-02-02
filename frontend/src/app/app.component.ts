@@ -11,14 +11,7 @@ import { MaterialModule } from './features/material.module';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    CoreModule,
-    MaterialModule,
-    PrimeNgModule,
-    DashboardModule,
-  ],
+  imports: [CommonModule, RouterOutlet, CoreModule, MaterialModule, PrimeNgModule, DashboardModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

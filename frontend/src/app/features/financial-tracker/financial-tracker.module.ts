@@ -7,12 +7,7 @@ import { FinancialTrackingRoutingModule } from './financial-tracker-routing.modu
 
 @NgModule({
   declarations: [FinancialTrackerComponent],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    PrimeNgModule,
-    FinancialTrackingRoutingModule,
-  ],
+  imports: [CommonModule, MaterialModule, PrimeNgModule, FinancialTrackingRoutingModule],
   exports: [FinancialTrackerComponent],
 })
 export class FinancialTrackerModule {}

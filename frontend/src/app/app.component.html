@@ -26,11 +26,7 @@
     [ngClass]="{ expanded: isExpanded, collapsed: !isExpanded }"
   >
     <div class="card flex justify-center">
-      <p-panelmenu
-        [model]="items"
-        [style]="{ width: '300px' }"
-        [multiple]="true"
-      />
+      <p-panelmenu [model]="items" [style]="{ width: '300px' }" [multiple]="true" />
     </div>
   </mat-drawer>
   <mat-drawer-content>

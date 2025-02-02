@@ -8,12 +8,7 @@ import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [LearningSkillProgressComponent],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    PrimeNgModule,
-    FinancialTrackingRoutingModule,
-  ],
+  imports: [CommonModule, MaterialModule, PrimeNgModule, FinancialTrackingRoutingModule],
   providers: [ApiService],
   exports: [LearningSkillProgressComponent],
 })

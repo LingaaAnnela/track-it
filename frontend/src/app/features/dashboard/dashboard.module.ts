@@ -27,12 +27,7 @@ import { DailyInsightsProductivityTileComponent } from './components/daily-insig
     SubscriptionTrackerTileComponent,
     TodoListTrackingTileComponent,
   ],
-  imports: [
-    CommonModule,
-    MaterialModule,
-    PrimeNgModule,
-    DashboardRoutingModule,
-  ],
+  imports: [CommonModule, MaterialModule, PrimeNgModule, DashboardRoutingModule],
   exports: [DashboardComponent],
 })
 export class DashboardModule {}
