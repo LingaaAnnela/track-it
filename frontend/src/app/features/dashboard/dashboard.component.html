@@ -1,37 +1,37 @@
 <div class="dashboard-container">
   <mat-grid-list cols="4" gutterSize="1.5rem">
-    @for (tile of (tiles$ | async); track tile) {
-    <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows">
-      <!-- [style.background]="tile.color" -->
+    @for (tile of tiles$ | async; track tile) {
+      <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows">
+        <!-- [style.background]="tile.color" -->
 
-      @if( tile.text === '💰 Financial Tracking') {
-      <trackit-financial-tracking-tile></trackit-financial-tracking-tile>
-      } @else if(tile.text === '📚 Learning & Skill Progress') {
-      <trackit-learning-skill-progress-tile></trackit-learning-skill-progress-tile>
-      } @else if(tile.text === '📈 Investments & Portfolio') {
-      <trackit-investment-portfolio-tile></trackit-investment-portfolio-tile>
-      } @else if(tile.text === '💵 Payments & Due Dates') {
-      <trackit-payments-due-dates-tile></trackit-payments-due-dates-tile>
-      } @else if(tile.text === '🎯 Goal Tracking') {
-      <trackit-goal-tracking-tile></trackit-goal-tracking-tile>
-      } @else if(tile.text === '✅ To-Do Lists & Planning') {
-      <trackit-todo-list-tracking-tile></trackit-todo-list-tracking-tile>
-      } @else if(tile.text === '💳 Subscription Tracker') {
-      <trackit-subscription-tracker-tile></trackit-subscription-tracker-tile>
-      } @else if(tile.text === '📊 Daily Insights & Productivity') {
-      <trackit-daily-insights-productivity-tile></trackit-daily-insights-productivity-tile>
-      } @else if(tile.text === '🏋️‍♂️ Health & Fitness') {
-      <trackit-health-fitness-tile></trackit-health-fitness-tile>
-      } @else {
-      <mat-card appearance="outlined">
-        <mat-card-header>
-          <mat-card-title> {{ tile.text }} </mat-card-title>
-          <!-- <mat-card-subtitle>Anything you'd like!</mat-card-subtitle> -->
-        </mat-card-header>
-        <mat-card-content> </mat-card-content>
-      </mat-card>
-      }
-    </mat-grid-tile>
+        @if (tile.text === '💰 Financial Tracking') {
+          <trackit-financial-tracking-tile></trackit-financial-tracking-tile>
+        } @else if (tile.text === '📚 Learning & Skill Progress') {
+          <trackit-learning-skill-progress-tile></trackit-learning-skill-progress-tile>
+        } @else if (tile.text === '📈 Investments & Portfolio') {
+          <trackit-investment-portfolio-tile></trackit-investment-portfolio-tile>
+        } @else if (tile.text === '💵 Payments & Due Dates') {
+          <trackit-payments-due-dates-tile></trackit-payments-due-dates-tile>
+        } @else if (tile.text === '🎯 Goal Tracking') {
+          <trackit-goal-tracking-tile></trackit-goal-tracking-tile>
+        } @else if (tile.text === '✅ To-Do Lists & Planning') {
+          <trackit-todo-list-tracking-tile></trackit-todo-list-tracking-tile>
+        } @else if (tile.text === '💳 Subscription Tracker') {
+          <trackit-subscription-tracker-tile></trackit-subscription-tracker-tile>
+        } @else if (tile.text === '📊 Daily Insights & Productivity') {
+          <trackit-daily-insights-productivity-tile></trackit-daily-insights-productivity-tile>
+        } @else if (tile.text === '🏋️‍♂️ Health & Fitness') {
+          <trackit-health-fitness-tile></trackit-health-fitness-tile>
+        } @else {
+          <mat-card appearance="outlined">
+            <mat-card-header>
+              <mat-card-title> {{ tile.text }} </mat-card-title>
+              <!-- <mat-card-subtitle>Anything you'd like!</mat-card-subtitle> -->
+            </mat-card-header>
+            <mat-card-content> </mat-card-content>
+          </mat-card>
+        }
+      </mat-grid-tile>
     }
   </mat-grid-list>
 </div>

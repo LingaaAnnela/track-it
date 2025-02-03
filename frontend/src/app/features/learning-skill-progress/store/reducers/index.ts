@@ -15,5 +15,5 @@ export const learningReducer = createReducer(
   on(LearningActions.CoursesInfoSuccess, (state, { courses }) => ({
     ...state,
     courses,
-  }))
+  })),
 );

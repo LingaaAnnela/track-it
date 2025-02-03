@@ -9,9 +9,7 @@ describe('DailyInsightsProductivityTileComponent', () => {
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(
-      DailyInsightsProductivityTileComponent
-    );
+    const fixture = TestBed.createComponent(DailyInsightsProductivityTileComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });

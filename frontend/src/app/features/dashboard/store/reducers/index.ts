@@ -15,5 +15,5 @@ export const dashboardReducer = createReducer(
   on(DashboardActions.tilesInfoSuccess, (state, { tiles }) => ({
     ...state,
     tiles,
-  }))
+  })),
 );

@@ -9,10 +9,10 @@ export const onInitialize$ = createEffect(
   () => {
     return inject(Actions).pipe(
       ofType(DashboardActions.initialize),
-      map(() => DashboardActions.getTilesInfo())
+      map(() => DashboardActions.getTilesInfo()),
     );
   },
-  { functional: true }
+  { functional: true },
 );
 
 export const onGetTilesInfo = createEffect(
@@ -22,12 +22,10 @@ export const onGetTilesInfo = createEffect(
       switchMap(() =>
         apiService.getTiles().pipe(
           map((tiles) => DashboardActions.tilesInfoSuccess({ tiles })),
-          catchError((error: { message: string }) =>
-            of(DashboardActions.tilesInfoFailure())
-          )
-        )
-      )
+          catchError((error: { message: string }) => of(DashboardActions.tilesInfoFailure())),
+        ),
+      ),
     );
   },
-  { functional: true }
+  { functional: true },
 );
