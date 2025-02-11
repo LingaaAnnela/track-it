@@ -4,22 +4,22 @@
       <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows">
         <!-- [style.background]="tile.color" -->
 
-        @if (tile.text === '💰 Financial Tracking') {
-          <trackit-financial-tracking-tile></trackit-financial-tracking-tile>
-        } @else if (tile.text === '📚 Learning & Skill Progress') {
-          <trackit-learning-skill-progress-tile></trackit-learning-skill-progress-tile>
-        } @else if (tile.text === '📈 Investments & Portfolio') {
-          <trackit-investment-portfolio-tile></trackit-investment-portfolio-tile>
-        } @else if (tile.text === '💵 Payments & Due Dates') {
-          <trackit-payments-due-dates-tile></trackit-payments-due-dates-tile>
-        } @else if (tile.text === '🎯 Goal Tracking') {
-          <trackit-goal-tracking-tile></trackit-goal-tracking-tile>
-        } @else if (tile.text === '✅ To-Do Lists & Planning') {
-          <trackit-todo-list-tracking-tile></trackit-todo-list-tracking-tile>
-        } @else if (tile.text === '💳 Subscription Tracker') {
-          <trackit-subscription-tracker-tile></trackit-subscription-tracker-tile>
-        } @else if (tile.text === '📊 Daily Insights & Productivity') {
-          <trackit-daily-insights-productivity-tile></trackit-daily-insights-productivity-tile>
+        @if (tile.text === '💰 Financial') {
+          <trackit-financial-tile></trackit-financial-tile>
+        } @else if (tile.text === '📚 Learning') {
+          <trackit-learning-tile></trackit-learning-tile>
+        } @else if (tile.text === '📈 Portfolio') {
+          <trackit-portfolio-tile></trackit-portfolio-tile>
+        } @else if (tile.text === '🔔 Reminders') {
+          <trackit-reminders-tile></trackit-reminders-tile>
+        } @else if (tile.text === '🎯 Goals') {
+          <trackit-goals-tile></trackit-goals-tile>
+        } @else if (tile.text === '✅ To-Dos') {
+          <trackit-todos-tile></trackit-todos-tile>
+        } @else if (tile.text === '💳 Subscriptions') {
+          <trackit-subscriptions-tile></trackit-subscriptions-tile>
+        } @else if (tile.text === '📊 Daily Insights') {
+          <trackit-daily-insights-tile></trackit-daily-insights-tile>
         } @else if (tile.text === '🏋️‍♂️ Health & Fitness') {
           <trackit-health-fitness-tile></trackit-health-fitness-tile>
         } @else {

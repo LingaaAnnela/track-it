@@ -22,7 +22,7 @@ export class AppComponent {
   ngOnInit() {
     this.items = [
       {
-        label: 'Financial Tracking',
+        label: 'Financial',
         icon: 'pi pi-dollar',
         routerLink: ['/financial-tracking'],
         items: [
@@ -41,7 +41,7 @@ export class AppComponent {
         ],
       },
       {
-        label: 'Goal Tracking',
+        label: 'Goals',
         icon: 'pi pi-bullseye',
         routerLink: [''],
         items: [
@@ -60,9 +60,9 @@ export class AppComponent {
         ],
       },
       {
-        label: 'Learning & Skill Progress',
+        label: 'Learning',
         icon: 'pi pi-chart-line',
-        routerLink: ['learning-skill-progress'],
+        routerLink: ['learning'],
         items: [
           {
             label: 'Courses & Certifications',
@@ -79,7 +79,7 @@ export class AppComponent {
         ],
       },
       {
-        label: 'To-Do Lists & Planning',
+        label: 'To-Do Lists',
         icon: 'pi pi-list-check',
         routerLink: [''],
         items: [
@@ -98,7 +98,7 @@ export class AppComponent {
         ],
       },
       {
-        label: 'Subscription & Payment Reminders',
+        label: 'Reminders',
         icon: 'pi pi-receipt',
         routerLink: [''],
         items: [

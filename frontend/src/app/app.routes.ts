@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
@@ -10,15 +9,10 @@ export const routes: Routes = [
   {
     path: 'financial-tracking',
     loadChildren: () =>
-      import('./features/financial-tracker/financial-tracker.module').then(
-        (m) => m.FinancialTrackerModule,
-      ),
+      import('./features/financial/financial.module').then((m) => m.FinancialModule),
   },
   {
-    path: 'learning-skill-progress',
-    loadChildren: () =>
-      import('./features/learning-skill-progress/learning-skill-progress.module').then(
-        (m) => m.LearningSkillProgressModule,
-      ),
+    path: 'learning',
+    loadChildren: () => import('./features/learning/learning.module').then((m) => m.LearningModule),
   },
 ];

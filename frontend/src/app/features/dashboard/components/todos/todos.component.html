@@ -1,0 +1,28 @@
+<mat-card appearance="outlined" class="trackit-card">
+  <mat-card-header>
+    <mat-card-title>✅ To-Dos </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="trackit-tile-container">
+      <mat-tab-group animationDuration="500ms">
+        <mat-tab label="Completed">
+          <mat-list role="list">
+            <mat-list-item role="listitem"> 📋 Total Pending Tasks </mat-list-item>
+            <mat-list-item role="listitem">⏳ Next Deadline</mat-list-item>
+            <mat-list-item role="listitem">⚠️ Overdue Tasks</mat-list-item>
+            <mat-list-item role="listitem"> 📅 Today's Priority Tasks </mat-list-item>
+            <br />
+          </mat-list>
+        </mat-tab>
+        <mat-tab label="Pending">
+          <mat-list-item role="listitem">⏳ Next Deadline</mat-list-item>
+          <mat-list-item role="listitem"> 📋 Total Pending Tasks </mat-list-item>
+          <mat-list-item role="listitem"> 📅 Today's Priority Tasks </mat-list-item>
+          <mat-list-item role="listitem">⚠️ Overdue Tasks</mat-list-item>
+          <br />
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end"> </mat-card-actions>
+</mat-card>
