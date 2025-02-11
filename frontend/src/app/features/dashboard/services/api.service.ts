@@ -17,35 +17,35 @@ export class ApiService {
 
   getTiles(): Observable<TrackitTile[]> {
     return of([
-      { text: '💰 Financial Tracking', cols: 1, rows: 1, color: 'lightblue' },
+      { text: '💰 Financial', cols: 1, rows: 1, color: 'lightblue' },
       {
-        text: '💵 Payments & Due Dates',
+        text: '🔔 Reminders',
         cols: 1,
         rows: 1,
         color: 'lightyellow',
       },
       {
-        text: '📈 Investments & Portfolio',
+        text: '📈 Portfolio',
         cols: 2,
         rows: 2,
         color: 'lightpink',
       },
       {
-        text: '📚 Learning & Skill Progress',
+        text: '📚 Learning',
         cols: 2,
         rows: 1,
         color: 'lightgreen',
       },
       {
-        text: '💳 Subscription Tracker',
+        text: '💳 Subscriptions',
         cols: 1,
         rows: 1,
         color: 'orange',
       },
-      { text: '✅ To-Do Lists & Planning', cols: 2, rows: 1, color: '#DDBDF1' },
-      { text: '🎯 Goal Tracking', cols: 1, rows: 1, color: 'red' },
+      { text: '✅ To-Dos', cols: 2, rows: 1, color: '#DDBDF1' },
+      { text: '🎯 Goals', cols: 1, rows: 1, color: 'red' },
       {
-        text: '📊 Daily Insights & Productivity',
+        text: '📊 Daily Insights',
         cols: 2,
         rows: 1,
         color: 'red',
