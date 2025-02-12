@@ -7,7 +7,7 @@ export const routes: Routes = [
       import('./features/dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
-    path: 'financial-tracking',
+    path: 'financial',
     loadChildren: () =>
       import('./features/financial/financial.module').then((m) => m.FinancialModule),
   },
