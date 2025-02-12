@@ -22,20 +22,45 @@ export class AppComponent {
   ngOnInit() {
     this.items = [
       {
-        label: 'Financial',
-        icon: 'pi pi-dollar',
-        routerLink: ['/financial-tracking'],
+        label: 'Dashboard',
+        icon: 'pi pi-home',
+        routerLink: ['/'],
+        items: [],
+      },
+      {
+        label: 'Learning',
+        icon: 'pi pi-chart-line',
+        routerLink: ['learning'],
         items: [
           {
-            label: 'Savings & Investments',
+            label: 'Courses',
             icon: 'pi pi-file',
           },
           {
-            label: 'Spending Analysis',
+            label: 'Reading List',
             icon: 'pi pi-users',
           },
           {
-            label: 'Payments & Subscriptions',
+            label: 'Certifications',
+            icon: 'pi pi-users',
+          },
+        ],
+      },
+      {
+        label: 'Financial',
+        icon: 'pi pi-dollar',
+        routerLink: ['/financial'],
+        items: [
+          {
+            label: 'Savings',
+            icon: 'pi pi-file',
+          },
+          {
+            label: 'Spendings',
+            icon: 'pi pi-users',
+          },
+          {
+            label: 'Investments',
             icon: 'pi pi-users',
           },
         ],
@@ -46,34 +71,19 @@ export class AppComponent {
         routerLink: [''],
         items: [
           {
-            label: 'Long-term & Short-term Goals',
+            label: 'Long-term',
             icon: 'pi pi-file',
           },
           {
-            label: 'Progress Bar & Forecasting',
-            icon: 'pi pi-users',
+            label: 'Short-term Goals',
+            icon: 'pi pi-file',
           },
+          // {
+          //   label: 'Progress Bar & Forecasting',
+          //   icon: 'pi pi-users',
+          // },
           {
             label: 'Habit Formation',
-            icon: 'pi pi-users',
-          },
-        ],
-      },
-      {
-        label: 'Learning',
-        icon: 'pi pi-chart-line',
-        routerLink: ['learning'],
-        items: [
-          {
-            label: 'Courses & Certifications',
-            icon: 'pi pi-file',
-          },
-          {
-            label: 'Reading List',
-            icon: 'pi pi-users',
-          },
-          {
-            label: 'Skill Mastery Tracker',
             icon: 'pi pi-users',
           },
         ],
