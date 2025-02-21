@@ -6,6 +6,8 @@ import { provideState } from '@ngrx/store';
 import { LearningComponent } from './learning.component';
 
 import { learningReducer } from './store/reducers';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
+
 import * as courseEffects from './store/effects/couse.effects';
 
 export const StoreProviders = [
@@ -21,6 +23,10 @@ const routes: Routes = [
     path: '',
     component: LearningComponent,
     providers: StoreProviders,
+  },
+  {
+    path: 'course-details',
+    component: CourseDetailsComponent,
   },
 ];
 

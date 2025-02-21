@@ -9,6 +9,11 @@
   display: block;
   justify-content: center;
   align-items: center;
+
+  .add-course {
+    margin-top: 1rem;
+    text-align: end;
+  }
 }
 .example-container {
   width: 100%;
@@ -19,6 +24,8 @@
 mat-card {
   height: 100%;
   width: 100%;
+  // align-items: center;
+  justify-content: space-between;
 }
 
 mat-grid-list {
@@ -26,4 +33,32 @@ mat-grid-list {
 }
 mat-grid-tile {
   margin: 2rem;
+}
+
+// .course-card {
+//   position: relative;
+//   padding: 16px;
+//   max-width: 400px;
+// }
+
+.delete-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.trackit-card {
+  position: relative;
+  padding: 16px;
+  max-width: 400px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1; /* Push delete button to the right */
 }
