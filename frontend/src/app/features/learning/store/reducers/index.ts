@@ -1,9 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { TrackitTile } from '../../../../core/interfaces';
+import { Course } from '../../interfaces/course.interface';
+
 import * as LearningActions from '../actions';
 
 export interface LearningState {
-  courses: TrackitTile[];
+  courses: Course[];
 }
 
 export const initialState: LearningState = {

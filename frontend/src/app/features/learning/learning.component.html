@@ -1,23 +1,61 @@
 <div class="trackit-container">
+  <div class="add-course">
+    <button
+      mat-raised-button
+      class="trackit-primary-btn"
+      (click)="openAddCourseDialog('Add', null)"
+    >
+      Add Course
+    </button>
+  </div>
   <mat-grid-list cols="4" gutterSize="1.5rem">
     @for (course of courses$ | async; track course) {
-      <mat-grid-tile [colspan]="course.cols" [rowspan]="course.rows">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-card appearance="outlined" class="trackit-card">
           <mat-card-header>
-            <mat-card-title> {{ course.text }} </mat-card-title>
+            <mat-card-title> {{ course.title }} </mat-card-title>
+            <p-button
+              icon="pi pi-trash"
+              variant="text"
+              pTooltip="Delete"
+              tooltipPosition="top"
+              severity="danger"
+              class="delete-button"
+              (click)="deleteCourse(course.id)"
+            />
+            <mat-card-subtitle> {{ course.subtitle }} </mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
-            <!-- <div class="trackit-tile-container">
+            <!-- Description: {{ course.description }}
+            <br />
+            Target Date: {{ course.targetDate | date }}
+            <br />
+            Priority : {{ course.priority }}
+            <br /> -->
             <mat-list role="list">
+              <mat-list-item role="listitem"> Description: {{ course.description }} </mat-list-item>
               <mat-list-item role="listitem">
-                ✅ Available Balance
+                Target Date: {{ course.targetDate | date }}
               </mat-list-item>
-              <mat-list-item role="listitem">📉 Monthly Spending</mat-list-item>
-              <mat-list-item role="listitem">🏦 Savings Progress</mat-list-item>
+              <mat-list-item role="listitem"> Priority : {{ course.priority }} </mat-list-item>
             </mat-list>
-          </div> -->
           </mat-card-content>
-          <mat-card-actions align="end"> </mat-card-actions>
+          <mat-card-actions>
+            <p-button
+              icon="pi pi-pen-to-square"
+              pTooltip="Edit"
+              tooltipPosition="top"
+              variant="text"
+              (click)="openAddCourseDialog('Edit', course)"
+            />
+            <p-button
+              icon="pi pi-window-maximize"
+              pTooltip="View More Details"
+              tooltipPosition="top"
+              variant="text"
+              routerLink="course-details"
+            />
+          </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
     }

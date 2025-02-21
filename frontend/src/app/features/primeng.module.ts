@@ -11,6 +11,7 @@ import { OverlayBadgeModule } from 'primeng/overlaybadge';
 import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
     CardModule,
     ChartModule,
     ProgressBarModule,
+    TooltipModule,
   ],
   exports: [
     ToolbarModule,
@@ -40,6 +42,7 @@ import { ProgressBarModule } from 'primeng/progressbar';
     CardModule,
     ChartModule,
     ProgressBarModule,
+    TooltipModule,
   ],
 })
 export class PrimeNgModule {}

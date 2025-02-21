@@ -7,7 +7,6 @@ import { TrackitTile } from '../../../core/interfaces';
   providedIn: 'root',
 })
 export class ApiService {
-  private BASE_URL = 'https://fake-json-api.mock.beeceptor.com';
   private apiUrl = 'http://127.0.0.1:8000';
 
   constructor(private _http: HttpClient) {
@@ -18,10 +17,6 @@ export class ApiService {
     return this._http.get(`${this.apiUrl}/`).subscribe({
       next: (res) => console.log(res),
     });
-  }
-
-  getCompanies(): Observable<any> {
-    return this._http.get(`${this.BASE_URL}/companies`);
   }
 
   getTiles(): Observable<TrackitTile[]> {
