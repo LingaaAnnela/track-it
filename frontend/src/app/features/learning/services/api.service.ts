@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Course } from '../interfaces/course.interface';
@@ -30,7 +30,10 @@ export class ApiService {
 
   // Update an existing course
   updateCourse(courseId: string, updatedCourse: Course): Observable<Course> {
-    return this._http.put<Course>(`${API_URL}/${courseId}`, updatedCourse);
+    console.log('updatedCourse:::: ', updatedCourse);
+    return this._http.put<Course>(`${API_URL}/${courseId}`, updatedCourse, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    });
   }
 
   // Delete a course

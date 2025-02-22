@@ -47,3 +47,4 @@ Thumbs.db
 *.pyo
 *.pyd
 backend/venv/
+*.env
