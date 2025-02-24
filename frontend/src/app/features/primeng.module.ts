@@ -12,6 +12,10 @@ import { CardModule } from 'primeng/card';
 import { ChartModule } from 'primeng/chart';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { TooltipModule } from 'primeng/tooltip';
+import { ChipModule } from 'primeng/chip';
+import { EditorModule } from 'primeng/editor';
+import { DrawerModule } from 'primeng/drawer';
+import { AvatarModule } from 'primeng/avatar';
 
 @NgModule({
   imports: [
@@ -28,6 +32,10 @@ import { TooltipModule } from 'primeng/tooltip';
     ChartModule,
     ProgressBarModule,
     TooltipModule,
+    ChipModule,
+    EditorModule,
+    DrawerModule,
+    AvatarModule,
   ],
   exports: [
     ToolbarModule,
@@ -43,6 +51,10 @@ import { TooltipModule } from 'primeng/tooltip';
     ChartModule,
     ProgressBarModule,
     TooltipModule,
+    ChipModule,
+    EditorModule,
+    DrawerModule,
+    AvatarModule,
   ],
 })
 export class PrimeNgModule {}

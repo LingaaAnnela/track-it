@@ -13,6 +13,7 @@ export class AddCourseComponent {
   courseForm: FormGroup;
   dialogTitle = 'Add Course';
   priorities = ['High', 'Medium', 'Low'];
+  categories = ['Frontend', 'Backend', 'DevOps', 'Cloud', 'Data Science', 'AI', 'Testing'];
 
   constructor(
     private courseService: ApiService,
@@ -27,6 +28,7 @@ export class AddCourseComponent {
       description: [''],
       targetDate: ['', Validators.required],
       priority: ['', Validators.required],
+      category: ['', Validators.required],
     });
 
     if (data.course) {

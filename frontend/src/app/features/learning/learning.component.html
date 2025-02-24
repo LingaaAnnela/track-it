@@ -33,11 +33,17 @@
             Priority : {{ course.priority }}
             <br /> -->
             <mat-list role="list">
-              <mat-list-item role="listitem"> Description: {{ course.description }} </mat-list-item>
               <mat-list-item role="listitem">
-                Target Date: {{ course.targetDate | date }}
+                <!-- Description: {{ sanitizeContent(course.description) }} -->
+                <!-- <div [innerHTML]="sanitizeContent(course.description)"></div> -->
+              </mat-list-item>
+              <mat-list-item role="listitem">
+                Category : <p-chip label="{{ course.category || 'NA' }}" />
               </mat-list-item>
               <mat-list-item role="listitem"> Priority : {{ course.priority }} </mat-list-item>
+              <!-- <mat-list-item role="listitem">
+                Target Date: {{ course.targetDate | date }}
+              </mat-list-item> -->
             </mat-list>
           </mat-card-content>
           <mat-card-actions>

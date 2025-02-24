@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+// import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectCourses } from './store/selectors';
 import { Course } from './interfaces/course.interface';
 import { AddCourseComponent } from './components/add-course/add-course.component';
+import { ApiService } from './services/api.service';
 
 import * as LearningActions from './store/actions';
-import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'trackit-learning',
@@ -57,4 +58,8 @@ export class LearningComponent implements OnInit {
       });
     }
   }
+
+  // sanitizeContent(content: string): SafeHtml {
+  //   return this._sanitizer.bypassSecurityTrustHtml(content);
+  // }
 }
