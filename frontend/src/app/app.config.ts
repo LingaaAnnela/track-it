@@ -9,14 +9,14 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 
-import { routes } from './app.routes';
+import { appRoutes } from './app.routes';
 import { reducers, metaReducers, trackItReducer } from './store/reducers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(),
-    provideRouter(routes),
+    provideRouter(appRoutes),
     provideAnimationsAsync(),
     providePrimeNG({
       ripple: true,

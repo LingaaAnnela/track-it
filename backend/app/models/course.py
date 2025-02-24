@@ -8,3 +8,4 @@ class Course(BaseModel):
     description: str
     targetDate: str
     priority: str
+    category: str

@@ -7,9 +7,10 @@ import { PrimeNgModule } from '../primeng.module';
 import { FinancialTrackingRoutingModule } from './learning-routing.module';
 import { ApiService } from './services/api.service';
 import { AddCourseComponent } from './components/add-course/add-course.component';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
 
 @NgModule({
-  declarations: [LearningComponent, AddCourseComponent],
+  declarations: [LearningComponent, AddCourseComponent, CourseDetailsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -18,6 +19,6 @@ import { AddCourseComponent } from './components/add-course/add-course.component
     FinancialTrackingRoutingModule,
   ],
   providers: [ApiService],
-  exports: [LearningComponent],
+  exports: [LearningComponent, CourseDetailsComponent],
 })
 export class LearningModule {}

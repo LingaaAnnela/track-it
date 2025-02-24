@@ -1,0 +1,11 @@
+<div class="layout-wrapper" [ngClass]="containerClass">
+  <trackit-topbar></trackit-topbar>
+  <trackit-sidebar></trackit-sidebar>
+  <div class="layout-main-container">
+    <div class="layout-main">
+      <router-outlet></router-outlet>
+    </div>
+    <trackit-footer></trackit-footer>
+  </div>
+  <div class="layout-mask animate-fadein"></div>
+</div>

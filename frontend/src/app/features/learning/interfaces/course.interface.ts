@@ -5,4 +5,5 @@ export interface Course {
   description: string;
   targetDate: string;
   priority: string;
+  category: string;
 }
