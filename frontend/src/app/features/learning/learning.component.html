@@ -1,69 +1,120 @@
-<div class="trackit-container">
-  <div class="add-course">
-    <button
-      mat-raised-button
-      class="trackit-primary-btn"
-      (click)="openAddCourseDialog('Add', null)"
-    >
-      Add Course
-    </button>
+<div class="container mx-auto">
+  <div class="flex items-center justify-between p-4 rounded-md">
+    <h2 class="text-xl font-bold text-gray-800 dark:text-white">Courses</h2>
+    <p-button label="Add Course" icon="pi pi-plus" iconPos="right" (click)="onAddCourse()" />
   </div>
-  <mat-grid-list cols="4" gutterSize="1.5rem">
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
     @for (course of courses$ | async; track course) {
-      <mat-grid-tile [colspan]="1" [rowspan]="1">
-        <mat-card appearance="outlined" class="trackit-card">
-          <mat-card-header>
-            <mat-card-title> {{ course.title }} </mat-card-title>
-            <p-button
-              icon="pi pi-trash"
-              variant="text"
-              pTooltip="Delete"
-              tooltipPosition="top"
-              severity="danger"
-              class="delete-button"
-              (click)="deleteCourse(course.id)"
-            />
-            <mat-card-subtitle> {{ course.subtitle }} </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <!-- Description: {{ course.description }}
-            <br />
-            Target Date: {{ course.targetDate | date }}
-            <br />
-            Priority : {{ course.priority }}
-            <br /> -->
-            <mat-list role="list">
-              <mat-list-item role="listitem">
-                <!-- Description: {{ sanitizeContent(course.description) }} -->
-                <!-- <div [innerHTML]="sanitizeContent(course.description)"></div> -->
-              </mat-list-item>
-              <mat-list-item role="listitem">
-                Category : <p-chip label="{{ course.category || 'NA' }}" />
-              </mat-list-item>
-              <mat-list-item role="listitem"> Priority : {{ course.priority }} </mat-list-item>
-              <!-- <mat-list-item role="listitem">
-                Target Date: {{ course.targetDate | date }}
-              </mat-list-item> -->
-            </mat-list>
-          </mat-card-content>
-          <mat-card-actions>
-            <p-button
-              icon="pi pi-pen-to-square"
-              pTooltip="Edit"
-              tooltipPosition="top"
-              variant="text"
-              (click)="openAddCourseDialog('Edit', course)"
-            />
-            <p-button
-              icon="pi pi-window-maximize"
-              pTooltip="View More Details"
-              tooltipPosition="top"
-              variant="text"
-              routerLink="course-details"
-            />
-          </mat-card-actions>
-        </mat-card>
-      </mat-grid-tile>
+      <div class="mb-4 p-2 md:p-4 flex items-center justify-center">
+        <p-card
+          [style]="{ width: '25rem', overflow: 'hidden' }"
+          class="dark:bg-gray-800 dark:border-surface-600"
+        >
+          <ng-template #header>
+            <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+          </ng-template>
+          <ng-template #title> {{ course.title }} </ng-template>
+          <ng-template #subtitle> {{ course.subtitle }} </ng-template>
+          <p>
+            {{ course.description }}
+          </p>
+          <ng-template #footer>
+            <div class="flex gap-4 mt-1">
+              <p-button
+                label="View More"
+                class="w-full"
+                styleClass="w-full"
+                routerLink="course-details"
+              />
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
     }
-  </mat-grid-list>
+  </div>
 </div>
+
+<p-dialog
+  [header]="dialogTitle"
+  [modal]="true"
+  [(visible)]="showAddDialog"
+  [style]="{ width: '25rem' }"
+>
+  <div class="flex items-center gap-4 mb-4">
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()" class="w-full">
+      <p-floatlabel variant="in" class="w-full">
+        <input
+          pInputText
+          id="title"
+          class="w-full mb-4"
+          formControlName="title"
+          pSize="large"
+          autocomplete="off"
+        />
+        <label for="title">Title</label>
+      </p-floatlabel>
+      <p-floatlabel variant="in" class="w-full">
+        <input
+          pInputText
+          id="subtitle"
+          class="w-full mb-4"
+          formControlName="subtitle"
+          pSize="large"
+          autocomplete="off"
+        />
+        <label for="subtitle">Subtitle</label>
+      </p-floatlabel>
+      <p-floatlabel class="w-full" variant="in">
+        <p-select
+          formControlName="priority"
+          inputId="priority"
+          [options]="priorities"
+          optionLabel="label"
+          optionValue="value"
+          class="w-full mb-4"
+          variant="filled"
+          appendTo="body"
+        />
+        <label for="priority">Priority</label>
+      </p-floatlabel>
+
+      <p-floatlabel class="w-full" variant="in">
+        <p-select
+          formControlName="category"
+          inputId="category"
+          [options]="categories"
+          optionLabel="label"
+          optionValue="value"
+          class="w-full mb-4"
+          variant="filled"
+          appendTo="body"
+        />
+        <label for="category">Catagory</label>
+      </p-floatlabel>
+
+      <p-floatlabel class="w-full" variant="in">
+        <p-datepicker
+          formControlName="targetDate"
+          inputId="targetDate"
+          showIcon
+          iconDisplay="input"
+          class="w-full mb-4"
+          styleClass="w-full"
+          variant="filled"
+          appendTo="body"
+        />
+        <label for="targetDate">Target Date</label>
+      </p-floatlabel>
+      <div class="flex mt-4 w-full">
+        <p-button
+          [disabled]="courseForm.invalid"
+          label="Save"
+          type="submit"
+          class="w-full"
+          styleClass="w-full"
+        />
+      </div>
+    </form>
+  </div>
+</p-dialog>

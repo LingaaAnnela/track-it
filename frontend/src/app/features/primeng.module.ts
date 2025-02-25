@@ -16,6 +16,13 @@ import { ChipModule } from 'primeng/chip';
 import { EditorModule } from 'primeng/editor';
 import { DrawerModule } from 'primeng/drawer';
 import { AvatarModule } from 'primeng/avatar';
+import { InputTextModule } from 'primeng/inputtext';
+import { Dialog } from 'primeng/dialog';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { SelectModule } from 'primeng/select';
+import { Select } from 'primeng/select';
+import { FloatLabel } from 'primeng/floatlabel';
+import { DatePickerModule } from 'primeng/datepicker';
 
 @NgModule({
   imports: [
@@ -23,6 +30,7 @@ import { AvatarModule } from 'primeng/avatar';
     ButtonModule,
     IconFieldModule,
     InputIconModule,
+    FloatLabelModule,
     SplitButtonModule,
     SkeletonModule,
     PanelMenuModule,
@@ -36,12 +44,20 @@ import { AvatarModule } from 'primeng/avatar';
     EditorModule,
     DrawerModule,
     AvatarModule,
+    InputTextModule,
+    Dialog,
+    SelectModule,
+    FloatLabel,
+    Select,
+    DatePickerModule,
   ],
   exports: [
     ToolbarModule,
     ButtonModule,
     IconFieldModule,
+    InputTextModule,
     InputIconModule,
+    FloatLabelModule,
     SplitButtonModule,
     SkeletonModule,
     PanelMenuModule,
@@ -55,6 +71,11 @@ import { AvatarModule } from 'primeng/avatar';
     EditorModule,
     DrawerModule,
     AvatarModule,
+    Dialog,
+    SelectModule,
+    FloatLabel,
+    Select,
+    DatePickerModule,
   ],
 })
 export class PrimeNgModule {}

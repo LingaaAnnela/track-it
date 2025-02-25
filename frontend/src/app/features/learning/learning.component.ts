@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-// import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectCourses } from './store/selectors';
 import { Course } from './interfaces/course.interface';
-import { AddCourseComponent } from './components/add-course/add-course.component';
 import { ApiService } from './services/api.service';
 
 import * as LearningActions from './store/actions';
@@ -19,33 +18,49 @@ import * as LearningActions from './store/actions';
 export class LearningComponent implements OnInit {
   courses$: Observable<Course[]>;
 
+  courseForm: FormGroup;
+  showAddDialog = false;
+  dialogTitle = 'Add Course';
+  priorities = [
+    { label: 'High', value: 'High' },
+    { label: 'Medium', value: 'Medium' },
+    { label: 'Low', value: 'Low' },
+  ];
+  categories = [
+    { label: 'Frontend', value: 'Frontend' },
+    { label: 'Backend', value: 'Backend' },
+    { label: 'Cloud', value: 'Cloud' },
+  ];
+
   constructor(
+    private fb: FormBuilder,
     private courseService: ApiService,
     private dialog: MatDialog,
     private _store: Store,
   ) {
     this.courses$ = this._store.select(selectCourses);
+    this.courseForm = this.fb.group({
+      title: ['', [Validators.required, Validators.minLength(3)]],
+      subtitle: [''],
+      description: [''],
+      targetDate: ['', Validators.required],
+      priority: ['', Validators.required],
+      category: ['', Validators.required],
+    });
   }
 
   ngOnInit(): void {
     this._store.dispatch(LearningActions.initialize());
   }
 
-  openAddCourseDialog(action: 'Add' | 'Edit', course: Course | null): void {
-    const dialogRef = this.dialog.open(AddCourseComponent, {
-      width: '500px',
-      height: '600px',
-      data: {
-        action,
-        title: `${action} Course`,
-        course,
-      }, // Pass any required data here
-    });
+  onAddCourse(): void {
+    this.showAddDialog = true;
+  }
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        this._store.dispatch(LearningActions.getCoursesInfo());
-      }
+  onSubmit() {
+    this.courseService.addCourse(this.courseForm.value).subscribe((response) => {
+      console.log('Course has been added!:', response);
+      this._store.dispatch(LearningActions.getCoursesInfo());
     });
   }
 
@@ -58,8 +73,4 @@ export class LearningComponent implements OnInit {
       });
     }
   }
-
-  // sanitizeContent(content: string): SafeHtml {
-  //   return this._sanitizer.bypassSecurityTrustHtml(content);
-  // }
 }
