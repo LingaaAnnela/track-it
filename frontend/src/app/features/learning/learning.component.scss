@@ -62,3 +62,7 @@ mat-grid-tile {
 .spacer {
   flex: 1; /* Push delete button to the right */
 }
+
+.p-dialog .p-dropdown-panel {
+  z-index: 1050 !important; /* Ensures dropdown appears above the dialog */
+}
