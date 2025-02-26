@@ -146,11 +146,15 @@
 
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { PrimeNgModule } from './primeng.module';
+import { MaterialModule } from './material.module';
 
 @Component({
   selector: 'trackit-root',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, MaterialModule, PrimeNgModule, CoreModule, DashboardModule],
   template: `<router-outlet></router-outlet>`,
 })
 export class AppComponent {}

@@ -20,9 +20,53 @@ export class MenuComponent {
         label: 'Home',
         items: [
           { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] },
+          { label: 'Portfolio', icon: 'pi pi-fw pi-user', routerLink: ['/portfolio'] },
           { label: 'Learning', icon: 'pi pi-fw pi-chart-line', routerLink: ['/learning'] },
-          { label: 'Bookmarks', icon: 'pi pi-fw pi-bookmark', routerLink: ['/bookmarks'] },
-          { label: 'Favourites', icon: 'pi pi-fw pi-star', routerLink: ['/favourites'] },
+          {
+            label: 'Blog',
+            icon: 'pi pi-fw pi-comment',
+            items: [
+              {
+                label: 'List',
+                icon: 'pi pi-fw pi-image',
+                routerLink: ['/auth/login'],
+              },
+              {
+                label: 'Details',
+                icon: 'pi pi-fw pi-list',
+                routerLink: ['/auth/error'],
+              },
+              {
+                label: 'Edit',
+                icon: 'pi pi-fw pi-pencil',
+                routerLink: ['/auth/access'],
+              },
+            ],
+          },
+          {
+            label: 'Settings',
+            icon: 'pi pi-fw pi-cog',
+            items: [
+              {
+                label: 'Privacy',
+                icon: 'pi pi-fw pi-lock',
+                routerLink: ['/auth/login'],
+              },
+              {
+                label: 'Notifications',
+                icon: 'pi pi-fw pi-bell',
+                routerLink: ['/auth/error'],
+              },
+              {
+                label: 'Logout',
+                icon: 'pi pi-fw pi-sign-out',
+                routerLink: ['/auth/access'],
+              },
+            ],
+          },
+
+          // { label: 'Bookmarks', icon: 'pi pi-fw pi-bookmark', routerLink: ['/bookmarks'] },
+          // { label: 'Favourites', icon: 'pi pi-fw pi-star', routerLink: ['/favourites'] },
         ],
       },
     ];

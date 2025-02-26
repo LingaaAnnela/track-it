@@ -23,6 +23,10 @@ import { SelectModule } from 'primeng/select';
 import { Select } from 'primeng/select';
 import { FloatLabel } from 'primeng/floatlabel';
 import { DatePickerModule } from 'primeng/datepicker';
+import { PasswordModule } from 'primeng/password';
+import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   imports: [
@@ -50,6 +54,10 @@ import { DatePickerModule } from 'primeng/datepicker';
     FloatLabel,
     Select,
     DatePickerModule,
+    PasswordModule,
+    CarouselModule,
+    TagModule,
+    DividerModule,
   ],
   exports: [
     ToolbarModule,
@@ -76,6 +84,10 @@ import { DatePickerModule } from 'primeng/datepicker';
     FloatLabel,
     Select,
     DatePickerModule,
+    PasswordModule,
+    CarouselModule,
+    TagModule,
+    DividerModule,
   ],
 })
 export class PrimeNgModule {}

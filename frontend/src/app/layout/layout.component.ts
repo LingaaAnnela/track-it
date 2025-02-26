@@ -6,10 +6,18 @@ import { TopbarComponent } from './components/topbar/topbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LayoutService } from './service/layout.service';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'trackit-layout',
-  imports: [CommonModule, TopbarComponent, SidebarComponent, RouterModule, FooterComponent],
+  imports: [
+    CommonModule,
+    TopbarComponent,
+    SidebarComponent,
+    RouterModule,
+    FooterComponent,
+    CardModule,
+  ],
   standalone: true,
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
