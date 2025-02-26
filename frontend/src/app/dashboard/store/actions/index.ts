@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { TrackitTile } from '../../../../core/interfaces';
+import { TrackitTile } from '../../../core/interfaces';
 
 export const initialize = createAction('[Dashboard] Initialize');
 

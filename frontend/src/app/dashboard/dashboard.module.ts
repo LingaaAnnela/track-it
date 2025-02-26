@@ -28,7 +28,7 @@ import { FinancialTileComponent } from './components/financial/financial.compone
     SubscriptionsTileComponent,
     TodosTileComponent,
   ],
-  imports: [CommonModule, MaterialModule, PrimeNgModule, DashboardRoutingModule],
+  imports: [CommonModule, MaterialModule, PrimeNgModule],
   exports: [DashboardComponent],
 })
 export class DashboardModule {}
