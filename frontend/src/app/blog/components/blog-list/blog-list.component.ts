@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { RESPONSIVE_OPTIONS } from '../../../constants/app.constants';
 
 @Component({
-  selector: 'app-course-details',
-  templateUrl: './course-details.component.html',
-  styleUrl: './course-details.component.scss',
+  selector: 'trackit-blog-list',
   standalone: false,
+
+  templateUrl: './blog-list.component.html',
+  styleUrl: './blog-list.component.scss',
 })
-export class CourseDetailsComponent {
+export class BlogListComponent {
   products = [
     {
       id: '1000',

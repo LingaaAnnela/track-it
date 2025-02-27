@@ -48,3 +48,6 @@ Thumbs.db
 *.pyd
 backend/venv/
 *.env
+
+# Frontend
+frontend/package-lock.json
