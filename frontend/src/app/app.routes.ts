@@ -4,8 +4,9 @@ import { provideEffects } from '@ngrx/effects';
 import { Notfound } from './pages/notfound/notfound';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { dashboardReducer } from './dashboard/store/reducers';
 import { LoginComponent } from './core/components/login/login.component';
+
+import { dashboardReducer } from './dashboard/store/reducers';
 
 import * as tileEffects from './dashboard/store/effects/tiles.effects';
 
@@ -20,6 +21,10 @@ export const appRoutes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: DashboardComponent, providers: StoreProviders },
+      {
+        path: 'portfolio',
+        loadChildren: () => import('./portfolio/portfolio.module').then((m) => m.PortfolioModule),
+      },
       {
         path: 'learning',
         loadChildren: () => import('./learning/learning.module').then((m) => m.LearningModule),
