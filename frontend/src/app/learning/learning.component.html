@@ -1,9 +1,8 @@
-<div class="container mx-auto">
-  <div class="flex items-center justify-between p-4 rounded-md">
-    <h2 class="text-xl font-bold text-gray-800 dark:text-white">Courses</h2>
+<div class="card mb-0 mt-8">
+  <div class="flex justify-between">
+    <span class="block text-3xl text-muted-color font-medium mb-4">Courses</span>
     <p-button label="Add Course" icon="pi pi-plus" iconPos="right" (click)="onAddCourse()" />
   </div>
-
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
     @for (course of courses$ | async; track course) {
       <div class="mb-4 p-2 md:p-4 flex items-center justify-center">
@@ -20,19 +19,45 @@
             {{ course.description }}
           </p>
           <ng-template #footer>
-            <div class="flex gap-4 mt-1">
-              <p-button
-                label="View More"
-                class="w-full"
-                styleClass="w-full"
-                routerLink="course-details"
-              />
+            <div class="flex justify-between justify-items-stretch">
+              <div class="w-16 flex-none">
+                <p-button
+                  icon="pi pi-trash"
+                  severity="danger"
+                  pTooltip="Delete"
+                  tooltipPosition="top"
+                  (click)="onDelete(course.id)"
+                  text
+                  raised
+                  rounded
+                />
+              </div>
+              <div class="justify-self-end">
+                <p-button
+                  icon="pi pi-pencil"
+                  class="mr-4"
+                  pTooltip="Edit"
+                  tooltipPosition="top"
+                  text
+                  raised
+                  rounded
+                />
+                <p-button label="View More" routerLink="course-details" />
+              </div>
             </div>
           </ng-template>
         </p-card>
       </div>
     }
   </div>
+  <!-- Deferred Loading: TODO -->
+  <!-- <div class="">
+    <p-skeleton styleClass="mb-2" borderRadius="16px" />
+    <p-skeleton width="10rem" styleClass="mb-2" borderRadius="16px" />
+    <p-skeleton width="5rem" styleClass="mb-2" borderRadius="16px" />
+    <p-skeleton height="2rem" styleClass="mb-2" borderRadius="16px" />
+    <p-skeleton width="10rem" height="4rem" borderRadius="16px" />
+  </div> -->
 </div>
 
 <p-dialog
@@ -73,7 +98,6 @@
           optionLabel="label"
           optionValue="value"
           class="w-full mb-4"
-          variant="filled"
           appendTo="body"
         />
         <label for="priority">Priority</label>
@@ -101,7 +125,6 @@
           iconDisplay="input"
           class="w-full mb-4"
           styleClass="w-full"
-          variant="filled"
           appendTo="body"
         />
         <label for="targetDate">Target Date</label>
@@ -118,3 +141,8 @@
     </form>
   </div>
 </p-dialog>
+
+<!-- <div class="card flex justify-center gap-2"> -->
+<p-toast />
+<p-confirmdialog />
+<!-- </div> -->

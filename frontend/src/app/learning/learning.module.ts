@@ -8,6 +8,7 @@ import { FinancialTrackingRoutingModule } from './learning-routing.module';
 import { ApiService } from './services/api.service';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [LearningComponent, AddCourseComponent, CourseDetailsComponent],
@@ -16,6 +17,7 @@ import { CourseDetailsComponent } from './components/course-details/course-detai
     ReactiveFormsModule,
     MaterialModule,
     PrimeNgModule,
+    CoreModule,
     FinancialTrackingRoutingModule,
   ],
   providers: [ApiService],

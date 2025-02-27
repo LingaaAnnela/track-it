@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectTiles } from './store/selectors';
+import { RESPONSIVE_OPTIONS } from '../constants/app.constants';
 
 import { TrackitTile } from '../core/interfaces';
 import * as DashboardActions from './store/actions';
@@ -97,38 +98,11 @@ export class DashboardComponent implements OnInit {
     },
   ];
 
-  responsiveOptions: any[] | undefined;
+  responsiveOptions = RESPONSIVE_OPTIONS;
 
   constructor() {}
 
-  ngOnInit() {
-    // this.productService.getProductsSmall().then((products) => {
-    //   this.products = products;
-    // });
-
-    this.responsiveOptions = [
-      {
-        breakpoint: '1400px',
-        numVisible: 2,
-        numScroll: 1,
-      },
-      {
-        breakpoint: '1199px',
-        numVisible: 3,
-        numScroll: 1,
-      },
-      {
-        breakpoint: '767px',
-        numVisible: 1,
-        numScroll: 1,
-      },
-      {
-        breakpoint: '575px',
-        numVisible: 1,
-        numScroll: 1,
-      },
-    ];
-  }
+  ngOnInit() {}
 
   getSeverity(status: string) {
     switch (status) {

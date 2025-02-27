@@ -27,6 +27,13 @@ import { PasswordModule } from 'primeng/password';
 import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { DividerModule } from 'primeng/divider';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { PanelModule } from 'primeng/panel';
+import { ImageModule } from 'primeng/image';
+import { FluidModule } from 'primeng/fluid';
+import { FileUploadModule } from 'primeng/fileupload';
 
 @NgModule({
   imports: [
@@ -58,7 +65,14 @@ import { DividerModule } from 'primeng/divider';
     CarouselModule,
     TagModule,
     DividerModule,
+    ConfirmDialogModule,
+    ToastModule,
+    PanelModule,
+    ImageModule,
+    FluidModule,
+    FileUploadModule,
   ],
+  providers: [ConfirmationService, MessageService],
   exports: [
     ToolbarModule,
     ButtonModule,
@@ -88,6 +102,12 @@ import { DividerModule } from 'primeng/divider';
     CarouselModule,
     TagModule,
     DividerModule,
+    ConfirmDialogModule,
+    ToastModule,
+    PanelModule,
+    ImageModule,
+    FluidModule,
+    FileUploadModule,
   ],
 })
 export class PrimeNgModule {}

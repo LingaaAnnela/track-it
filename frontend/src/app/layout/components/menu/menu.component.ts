@@ -29,17 +29,17 @@ export class MenuComponent {
               {
                 label: 'List',
                 icon: 'pi pi-fw pi-image',
-                routerLink: ['/auth/login'],
+                routerLink: ['/blog'],
               },
               {
                 label: 'Details',
                 icon: 'pi pi-fw pi-list',
-                routerLink: ['/auth/error'],
+                routerLink: ['/blog/details'],
               },
               {
                 label: 'Edit',
                 icon: 'pi pi-fw pi-pencil',
-                routerLink: ['/auth/access'],
+                routerLink: ['/blog/create'],
               },
             ],
           },

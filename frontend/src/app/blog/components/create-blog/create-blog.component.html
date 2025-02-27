@@ -1,0 +1,96 @@
+<p-card header="Create a new post" class="rounded-sm">
+  <div class="grid grid-cols-3 gap-4">
+    <div class="col-span-2">
+      <div class="my-4">
+        <p-fileupload
+          name="demo[]"
+          url="https://www.primefaces.org/cdn/api/upload.php"
+          (onUpload)="onUpload($event)"
+          [multiple]="true"
+          accept="image/*"
+          maxFileSize="1000000"
+          mode="advanced"
+        >
+          <ng-template #empty>
+            <div>Drag and drop files to here to upload.</div>
+          </ng-template>
+          <ng-template #content>
+            <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+            </ul>
+          </ng-template>
+        </p-fileupload>
+      </div>
+
+      <div class="my-4">
+        <p-fluid>
+          <div class="grid gap-4">
+            <p-iconfield class="w-full">
+              <input pInputText placeholder="Title" size="large" />
+            </p-iconfield>
+          </div>
+        </p-fluid>
+      </div>
+      <div class="my-4">
+        <p-fluid>
+          <div class="grid gap-4">
+            <p-iconfield class="w-full">
+              <textarea
+                pTextarea
+                placeholder="Content"
+                rows="5"
+                pSize="large"
+                class="w-full border-2"
+              ></textarea>
+            </p-iconfield>
+          </div>
+        </p-fluid>
+      </div>
+      <div class="my-4">
+        <form [formGroup]="formGroup">
+          <p-editor formControlName="text" [style]="{ height: '320px' }" />
+        </form>
+      </div>
+    </div>
+    <div class="col-span-1 gap-4">
+      <div class="card rounded-sm my-4 border-2">
+        <span class="block text-ll text-muted-color font-medium mb-4">Articles</span>
+        <p-divider type="solid" />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellat facere,
+        dolorum sint dolore autem officiis rerum distinctio incidunt quam eveniet esse ea ullam
+        voluptatum! Error molestias ad alias.
+      </div>
+      <div class="card rounded-sm my-4 border-2">
+        <span class="block text-ll text-muted-color font-medium mb-4">Tags</span>
+        <p-divider type="solid" />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellat facere,
+        dolorum sint dolore autem officiis rerum distinctio incidunt quam eveniet esse ea ullam
+        voluptatum! Error molestias ad alias.
+      </div>
+      <div class="card rounded-sm my-4 border-2">
+        <span class="block text-ll text-muted-color font-medium mb-4">Meta</span>
+        <p-divider type="solid" />
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi laboriosam repellat facere,
+        dolorum sint dolore autem officiis rerum distinctio incidunt quam eveniet esse ea ullam
+        voluptatum! Error molestias ad alias.
+      </div>
+
+      <div class="flex gap-4 mt-1 w-full">
+        <p-button
+          label="Discard"
+          variant="outlined"
+          severity="danger"
+          class="flex-1"
+          styleClass="w-full"
+        />
+        <p-button
+          label="Publish"
+          icon="pi pi-check"
+          [raised]="true"
+          class="flex-1"
+          styleClass="w-full"
+        />
+      </div>
+    </div>
+  </div>
+</p-card>

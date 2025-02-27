@@ -24,6 +24,10 @@ export const appRoutes: Routes = [
         path: 'learning',
         loadChildren: () => import('./learning/learning.module').then((m) => m.LearningModule),
       },
+      {
+        path: 'blog',
+        loadChildren: () => import('./blog/blog.module').then((m) => m.BlogModule),
+      },
     ],
   },
   { path: 'notfound', component: Notfound },
